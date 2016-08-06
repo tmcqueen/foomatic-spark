@@ -16,11 +16,13 @@ class EventServiceProvider extends ServiceProvider
         // User Related Events...
         'Laravel\Spark\Events\Auth\UserRegistered' => [
             'Laravel\Spark\Listeners\Subscription\CreateTrialEndingNotification',
+            'App\Listeners\Subscription\SendNewRegistrationNotificationEmail',
         ],
 
         'Laravel\Spark\Events\Subscription\UserSubscribed' => [
             'Laravel\Spark\Listeners\Subscription\UpdateActiveSubscription',
             'Laravel\Spark\Listeners\Subscription\UpdateTrialEndingDate',
+            'App\Listeners\Subscription\SendNewSubscriptionNotificationEmail'
         ],
 
         'Laravel\Spark\Events\Profile\ContactInformationUpdated' => [
@@ -29,10 +31,12 @@ class EventServiceProvider extends ServiceProvider
 
         'Laravel\Spark\Events\Subscription\SubscriptionUpdated' => [
             'Laravel\Spark\Listeners\Subscription\UpdateActiveSubscription',
+            'App\Listeners\Subscription\SendUpdatedSubscriptionNotificationEmail'
         ],
 
         'Laravel\Spark\Events\Subscription\SubscriptionCancelled' => [
             'Laravel\Spark\Listeners\Subscription\UpdateActiveSubscription',
+            'App\Listeners\Subscription\SendCancelledSubscriptionNotificationEmail'
         ],
 
         // Team Related Events...

@@ -13,11 +13,11 @@ class SparkServiceProvider extends ServiceProvider
      * @var array
      */
     protected $details = [
-        'vendor' => 'Your Company',
-        'product' => 'Your Product',
-        'street' => 'PO Box 111',
-        'location' => 'Your Town, NY 12345',
-        'phone' => '555-555-5555',
+        'vendor' => 'Foomatic',
+        'product' => 'Makerspace',
+        'street' => '431 S. Goldthwaite St.',
+        'location' => 'Montgomery, AL 36104',
+        'phone' => '334-220-8649',
     ];
 
     /**
@@ -58,7 +58,7 @@ class SparkServiceProvider extends ServiceProvider
                 'First', 'Second', 'Third'
             ]);
 
-        Spark::plan('Basic', '39wm')
+        Spark::plan('Basic', 'maker-monthly')
             ->price(25)
             ->features([
                 'First', 'Second', 'Third'
